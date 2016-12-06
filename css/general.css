@@ -34,8 +34,12 @@ h1 {
   margin-left: 0;
 }
 
+.lead {
+  margin-bottom: 10px;
+}
+
 .container {
-  padding: 20px 30px;
+  padding: 20px 20px;
 }
 
 .bingo-button {
