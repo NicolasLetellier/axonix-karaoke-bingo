@@ -40,7 +40,12 @@ $(document).ready(function(){
   }
 
   function displayBingo(result){
-
+    $('.results-list').fadeOut(200, function(){
+      $('.results-list').html('');
+      $('.results-list').append('<p>Here is your pick, good luck!<p>');
+      $('.results-list').append('<p class="lead">' + result + '</p>');
+      $('.results-list').slideDown(200);
+    });
   }
 
   $.get('karaoke_list.txt', function(data) {
@@ -50,6 +55,8 @@ $(document).ready(function(){
     $('.results-list').hide();
 
     $('.search-button').on('click', { list: list }, searchList);
+
+    $('form').submit({ list: list }, searchList);
 
     $('.bingo-button').on('click', { list: list }, bingo);
 
