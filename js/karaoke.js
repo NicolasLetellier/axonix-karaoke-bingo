@@ -11,22 +11,45 @@ $(document).ready(function(){
 
   function searchList(event) {
     event.preventDefault();
+    var list = event.data.list;
+    var searchString = ($('.search-input').val()).toLowerCase();
+    var resultsList = list.filter(function(item){
+      return (item.toLowerCase()).indexOf(searchString) !== -1;
+    });
+    console.log(resultsList, searchString);
+    displaySearchList(resultsList, searchString);
+  }
 
+  function displaySearchList(list, searchString){
+    $('.results-list').fadeOut(200, function(){
+      $('.results-list').html('');
+      $('.results-list').append('<p class="lead"> ' + list.length + ' results containing "' + searchString + '" :<p>');
+      $('.results-list').append('<ul class="list-group"></ul>');
+      list.forEach(function(result){
+        $('.list-group').append('<li class="list-group-item">' + result + '</li>');
+      });
+      $('.results-list').slideDown(600);
+    });
   }
 
   function bingo(event) {
     event.preventDefault();
     var list = event.data.list;
     var randomIndex = Math.floor(Math.random() * list.length);
-    console.log(list[randomIndex]);
-    return list[randomIndex];
+    displayBingo(list[randomIndex]);
+  }
+
+  function displayBingo(result){
+
   }
 
   $.get('karaoke_list.txt', function(data) {
 
     var list = cleanFile(data);
 
-    $('.search-button').on('click', { list: list, searchString: $('.search-input').val() }, searchList);
+    $('.results-list').hide();
+
+    $('.search-button').on('click', { list: list }, searchList);
 
     $('.bingo-button').on('click', { list: list }, bingo);
 
