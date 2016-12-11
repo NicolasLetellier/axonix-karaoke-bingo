@@ -5,7 +5,7 @@ html {
 body {
   font-family: 'Roboto', sans-serif;
   min-height: 100%;
-  background: linear-gradient(0deg, #cee7f5, white, white 80%);
+  background-color: #E9F5FF;
 }
 
 
@@ -13,20 +13,26 @@ header {
   background-color: #242e36;
 }
 
+.stars-container {
+  background-image: url('../img/stars.png');
+}
+
 .header-container {
-  width: 400px;
+  width: 380px;
   margin: auto;
+  background-color: #242e36;
 }
 
 header img {
-  width: 350px;
-  margin: 30px 0 10px 10px;
+  width: 300px;
+  margin: 25px 0 8px 8px;
 }
 
 h1 {
   color: #FFBDFD;
   text-align: right;
   padding: 0 10px 20px 20px;
+  font-family: 'Fugaz One', cursive;
 }
 
 .row {
@@ -43,6 +49,15 @@ h1 {
 }
 
 .bingo-button {
-  margin: 20px 0 20px 0;
+  margin: 25px 0 40px 0;
 }
 
+.bingo-result {
+  padding: 40px 0 0 0;
+  font-size: 30px;
+  text-align: center;
+}
+
+.list-group-item {
+  font-size: 18px;
+}

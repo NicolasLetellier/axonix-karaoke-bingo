@@ -23,7 +23,7 @@ $(document).ready(function(){
   function displaySearchList(list, searchString){
     $('.results-list').fadeOut(200, function(){
       $('.results-list').html('');
-      $('.results-list').append('<p class="lead"> ' + list.length + ' results containing "' + searchString + '" :<p>');
+      $('.results-list').append('<p> ' + list.length + ' results containing "' + searchString + '" :<p>');
       $('.results-list').append('<ul class="list-group"></ul>');
       list.forEach(function(result){
         $('.list-group').append('<li class="list-group-item">' + result + '</li>');
@@ -42,8 +42,7 @@ $(document).ready(function(){
   function displayBingo(result){
     $('.results-list').fadeOut(200, function(){
       $('.results-list').html('');
-      $('.results-list').append('<p>Here is your pick, good luck!<p>');
-      $('.results-list').append('<p class="lead">' + result + '</p>');
+      $('.results-list').append('<p class="bingo-result">' + result + '</p>');
       $('.results-list').slideDown(200);
     });
   }
