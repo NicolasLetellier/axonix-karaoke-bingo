@@ -18,21 +18,22 @@ header {
 }
 
 .header-container {
-  width: 380px;
+  width: 270px;
   margin: auto;
   background-color: #242e36;
 }
 
 header img {
-  width: 300px;
-  margin: 25px 0 8px 8px;
+  width: 250px;
+  margin: 20px 0 6px 6px;
 }
 
 h1 {
   color: #FFBDFD;
   text-align: right;
-  padding: 0 10px 20px 20px;
+  padding: 0 6px 16px 16px;
   font-family: 'Fugaz One', cursive;
+  font-size: 28px;
 }
 
 .row {
@@ -53,7 +54,7 @@ h1 {
 }
 
 .bingo-result {
-  padding: 40px 0 0 0;
+  padding: 20px 0 0 0;
   font-size: 30px;
   text-align: center;
 }
